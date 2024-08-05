@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(123deg,blue,red);
+            font-size: large;
+        }
+        #container{
+            background-color: #abcafa;
+            border: solid;
+            border-radius: 50px;
+            width: 52rem;
+            height: 29rem;
+            margin: 5% 0% 0%;
+        }
+    
+        #inputTask{
+            position: relative;
+            top:2rem;
+            left: 13rem;
+            height: 30px;
+            border-radius: 10px;
+
+        }
+        #inputTask:hover{
+            background-color: rgb(53, 246, 53);
+        }
+        #inputText{
+            position: relative;
+            top:2rem;
+            left: 13rem;
+            width: 335px;
+            height: 25px;
+            border-radius: 10px;
+
+        }
+        #listcontainer{
+            overflow:auto;
+            position: relative;
+            top: 10%;
+            width: 50%;
+            height: 80%;
+            margin:0% 0% 0% 25% ;
+            z-index: 100;
+            background-color: white;
+            border: solid;
+            border-radius: 10px;
+     }
+        h2{
+            display: inline-block;
+            position: relative;
+            left: 175px;
+            border: solid red;
+            border-radius: 10px;
+            background-color: rgb(114, 114, 255);
+        }
+        ul li.checked{
+            color:#495656;
+            text-decoration: line-through;
+            list-style: none;
+            user-select: none;
+            position: relative;
+            cursor: pointer;
+            
+        }
+         /* ul li{
+            cursor: pointer;
+        } */
+        button{
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="inputText" class="inputTask" placeholder="Enter Task">
+        <input type="submit" id="inputTask" value="Add Task">
+        
+        <div id="listcontainer" name="list">
+            <h2>Task</h2><hr>
+            <ul class="list">
+
+
+            </ul>
+        </div>
+
+    </div>
+    
+    <script >
+    addEventListener("DOMContentLoaded",()=>{
+
+
+        const btn=document.getElementById("inputTask")
+        btn.addEventListener("click",()=>{
+            var inputText=document.getElementById("inputText")
+            const ul=document.querySelector(".list")
+            const li=document.createElement("li")
+            const input=document.createElement("input")
+            const dbtn=document.createElement("button")
+            dbtn.innerText="Delete"
+            input.setAttribute("type","checkbox" )
+            // input.setAttribute("unchecked","false")
+            input.style.height="16px"
+            input.style.width="27px"
+
+            if (inputText.value===""){
+                alert("Enter something")
+            }
+            else{
+            li.innerText=inputText.value
+            ul.append(li)
+            li.appendChild(input)
+            li.appendChild(dbtn);
+            console.log(ul)
+            savedata()
+            }
+        })
+        addEventListener("keypress",(event)=>{
+            if(event.key==="Enter"){
+
+                var inputText=document.getElementById("inputText")
+                const ul=document.querySelector(".list")
+                const li=document.createElement("li")
+                const input=document.createElement("input")
+                const dbtn=document.createElement("button")
+                dbtn.innerText="Delete"
+                input.setAttribute("type","checkbox")
+                // input.setAttribute("checked", "false")
+                input.style.height="16px"
+                input.style.width="27px"
+
+                if (inputText.value===""){
+                    alert("Enter something")
+                }
+                else{
+                li.innerText=inputText.value
+                ul.append(li)
+                li.appendChild(input)
+                li.appendChild(dbtn);
+                console.log(ul)
+                savedata()
+                }
+            }
+        
+        })
+        function savedata(){
+            const ul=document.querySelector(".list")
+
+            localStorage.setItem("data",ul.innerHTML)
+        }
+        
+        const listcontainer=document.getElementById("listcontainer")
+        listcontainer.addEventListener("click",(e)=>{
+            if(e.target.tagName==="INPUT"){
+               var check=e.target.parentElement.classList.toggle("checked");
+               savedata()
+                }
+            // else if(e.target.tagName==="LI"){
+            //    e.target.parentElement.classList.toggle("checked");
+            //    savedata()
+            //     }
+                
+            else if(e.target.tagName==="BUTTON"){
+                e.target.parentElement.remove()
+                savedata()
+            }
+        
+        })
+
+        window.onload= ()=>{
+             // localStorage.clear()
+            const ul = document.querySelector(".list");
+            ul.innerHTML= localStorage.getItem("data")
+        }
+    })
+        
+
+    </script>
+    
+</body>
+</html>

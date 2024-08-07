@@ -1,78 +1,144 @@
-        body{
-            display: flex;
-            justify-content: center;
-            background: linear-gradient(123deg,blue,red);
-            font-size: large;
-        
-        }
-        #container{
-            background-color: #abcafa;
-            border: solid;
-            border-radius: 50px;
-            width: 52rem;
-            height: 29rem;
-            margin: 5% 0% 0%;
-        }
-    
-        #inputTask{
-            position: relative;
-            top:2rem;
-            left: 13rem;
-            height: 30px;
-            border-radius: 10px;
+body{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
+  .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+   z-index: -1;
+}
 
-        }
-        #inputTask:hover{
-            background-color: rgb(53, 246, 53);
-        }
-        #inputText{
-            position: relative;
-            top:2rem;
-            left: 13rem;
-            width: 335px;
-            height: 25px;
-            border-radius: 10px;
+  #background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#container{
+    background: linear-gradient(123deg,blue,red,yellow);
+
+    border: solid;
+    border-radius: 50px;
+    width: 55rem;
+    height: 45rem;
+    margin: 5% 0% 0%;
+}
+
+#inputTask{
+    position: relative;
+    top:2rem;
+    left: 13rem;
+    height: 30px;
+    border-radius: 10px;
+
+}
+#inputTask:hover{
+    background-color: rgb(53, 246, 53);
+}
+#inputText{
+    position: relative;
+    top:2rem;
+    left: 13rem;
+    width: 335px;
+    height: 25px;
+    border-radius: 10px;
+    font-size: larger;
+
+}
+#listcontainer{
+    overflow:auto;
+    position: relative;
+    top: 10%;
+    width: 50%;
+    height: 80% ;
+    margin:0% 0% 0% 25% ;
+    z-index: 100;
+    background-color: white;
+    border: solid;
+    border-radius: 10px;
+    font-size: larger;
+}
+h2{
+    display: inline-block;
+    position: relative;
+    left: 166px;
+    border: solid red;
+    border-radius: 10px;
+    background-color: rgb(114, 114, 255);
+}
+ul li.checked{
+    color:#495656;
+    text-decoration: line-through;
+    list-style: none;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    
+}
+ ul li:hover{
+    color:red
+}
+button{
+    border-radius: 10px;
+}
+button:hover{
+    background-color: red;
+}
+h1{
+    margin-top: 15px ;
+    
+}
+@media (min-width: 412px) and (max-width: 915px){
+    #inputText{
+        position: relative;
+        left:0.5rem;
+        width: 260px;
+        margin:0px -200px 0px -74px;
+     }
+     #container{
+        display: flex;
+        justify-content: center;
+      
 
         }
         #listcontainer{
-            overflow:auto;
-            position: relative;
-            top: 10%;
-            width: 50%;
-            height: 80% ;
-            margin:0% 0% 0% 25% ;
-            z-index: 100;
-            background-color: white;
-            border: solid;
-            border-radius: 10px;
-     }
-        h2{
-            display: inline-block;
-            position: relative;
-            left: 175px;
-            border: solid red;
-            border-radius: 10px;
-            background-color: rgb(114, 114, 255);
+            margin: 20px 0px 0px -79px;
+
         }
-        ul li.checked{
-            color:#495656;
-            text-decoration: line-through;
-            list-style: none;
-            user-select: none;
-            position: relative;
-            cursor: pointer;
+        h2{
+            margin: 20px 0px 0px -107px;
             
         }
-         ul li:hover{
-            color:red
+        #inputTask{
+            margin: 0px 0px 0px 0px;
+        
         }
-        button{
-            border-radius: 10px;
+}
+
+@media (min-width: 600px) and (max-width: 1280px){
+        #inputText{
+            position: relative;
+            left:0.5rem;
+            width: 260px;
+            margin-right: -202px;
         }
-        button:hover{
-            background-color: red;
-            cursor: pointer;
+        #listcontainer{
+            background-color: aqua;
+
         }
-        h1{
-            margin-left: 293px;
+        footer{
+            text-align: center;
+            padding: 20px;
+            background-color: #130f0f3d;
+            /* position: absolute;
+            bottom: 0; */
+         }
+         #date-time {
+            font-size: 16px;
+            color: #333;
         }
+}

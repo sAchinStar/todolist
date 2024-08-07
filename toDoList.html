@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="toDoList.css">
-
+    <link rel="stylesheet" href="toDoList.css">   
 </head>
-<body>
+<body> 
+    <!-- <header>
+        <h3> WELCOME TO MY TO DO LIST </h3>
+    </header> -->
+   <div class="video-background">
+  <video autoplay muted loop id="background-video">
+      <source src="werfgh.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    </div>
     
     <div id="container">
-        <!-- <h1>TO DO LIST</h1> -->
 
         <input type="text" id="inputText" class="inputTask" placeholder="Enter Task">
-        <input type="submit" id="inputTask" value="Add Task">
+        <input type="button" id="inputTask" value="Add Task">
         
         <div id="listcontainer" name="list">
             <h2>Task</h2><hr>
@@ -22,9 +29,10 @@
 
             </ul>
         </div>
-
     </div>
-    <script src="toDoList.js"></script>
-    
+    <script src="toDoList.js"> </script> 
+    <footer>
+        <div id="date-time"></div>
+    </footer>
 </body>
 </html>

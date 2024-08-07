@@ -95,7 +95,7 @@ h1{
 @media (min-width: 412px) and (max-width: 915px){
     #inputText{
         position: relative;
-        left:0.5rem;
+        left:55px;
         width: 260px;
         margin:0px -200px 0px -74px;
      }
@@ -106,15 +106,17 @@ h1{
 
         }
         #listcontainer{
-            margin: 20px 0px 0px -79px;
+            margin: 20px 0px 0px -68px;
+            width: 298px;
 
         }
         h2{
-            margin: 20px 0px 0px -107px;
+            margin: 20px 0px 0px -50px;
             
         }
         #inputTask{
-            margin: 0px 0px 0px 0px;
+            left: 255px;
+            /* margin: 0px 0px 0px 0px; */
         
         }
 }

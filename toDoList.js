@@ -48,6 +48,7 @@ addEventListener("DOMContentLoaded",()=>{
             const input=document.createElement("input")
             const dbtn=document.createElement("button")
             const ebtn=document.createElement("button")
+            const hr=document.createElement("hr")
             
             label.setAttribute("class","content")
             dbtn.innerText="Delete"
@@ -67,6 +68,7 @@ addEventListener("DOMContentLoaded",()=>{
             li.appendChild(input);
             li.appendChild(dbtn);
             li.appendChild(ebtn);
+            li.appendChild(hr);
 
             console.log(ul)
             savedata()

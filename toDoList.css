@@ -34,6 +34,7 @@ body{
     left: 14rem;
     height: 30px;
     border-radius: 10px;
+    padding-top: 6px;
 
 }
 #inputTask:hover{

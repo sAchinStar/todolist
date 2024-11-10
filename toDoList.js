@@ -109,9 +109,9 @@ addEventListener("DOMContentLoaded",()=>{
 
         }else if (e.target.tagName==="BUTTON" && e.target.classList.contains("ebtn")){
             let label=e.target.parentElement.querySelector(".content")
-            // console.log(label);
+            console.log(label);
             let currentText= label.innerText
-            // console.log(currentText);
+            console.log(currentText);
             let newText=prompt("Edit Task",currentText)
             if (newText!=""){
                 // console.log(newText);
@@ -133,7 +133,7 @@ addEventListener("DOMContentLoaded",()=>{
         const ul=document.getElementById("list")
         // console.log(localStorage.getItem("data"));
         
-        ul.innerHTML= localStorage.getItem("data")
+        localStorage.getItem("data")!==null ? ul.innerHTML= localStorage.getItem("data") : null;
     }
     
 })
